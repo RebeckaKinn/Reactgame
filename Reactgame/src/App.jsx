@@ -1,24 +1,25 @@
 import { useState } from 'react'
 import settings_logo from './assets/settings.png'
+//import background from './assets/moving_cat.gif'
 import './App.css'
 
 function App() {
 
   return (
     <>
-    <div>
-      <img 
-        className='logo'
-        src={settings_logo}/>
+      <div>
+        <img 
+          className='settingsButton'
+          src={settings_logo}/>
       </div>
-
-      <h1>velkommen</h1>
-      <div className="card">
-        <button>
-          START
+    <div className='startMenu'>
+        <h1>velkommen</h1>
+        <div className='startButton'>
+          <button>
+            START
         </button>
       </div>
-
+    </div>
     </>
   )
 }
