@@ -1,9 +1,5 @@
 
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -11,19 +7,29 @@ body {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
 
-  display: grid;
-  grid-template-columns: 100px repeat(3, auto) 100px;
-  grid-template-rows: 100px repeat(3, auto) 100px;
-  grid-template-areas: 
-  'left     head head head   right'
-  'left     body body body   right'
-  'left footer footer footer right';
-
   background-image: url(../src/assets/moving_cat.gif);
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.container{
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  
+  grid-template-columns: 120px repeat(3, auto) 120px;
+  grid-template-rows: 100px repeat(3, auto) 100px;
+  grid-template-areas: 
+  'left     head head head   right'
+  'left     body body body   right'
+  'left footer footer footer right';
 }
 
 h1 {

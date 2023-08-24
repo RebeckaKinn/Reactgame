@@ -12,14 +12,11 @@
 
 .startMenu{
   grid-area: body;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  
 }
 
 .startButton{
- 
+ grid-area: footer;
 }
 
 
