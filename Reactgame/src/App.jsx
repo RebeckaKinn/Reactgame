@@ -1,40 +1,17 @@
 import { useState } from 'react'
-import settings_logo from './assets/settings.png'
-//import background from './assets/moving_cat.gif'
 import './App.css'
 import './index.css'
+import GameTest from './slideGame/slideGame.jsx'
 
 function App() {
 
   return (
-    <>
-    <div className='container'>
-      <div>
-        <img 
-          className='settingsButton'
-          src={settings_logo}/>
-      </div>
-      <div 
-        className='startMenu'>
-        <h1>velkommen</h1>
-      </div>
-      <div 
-        className='startButton'>
-        <button>
-          START
-        </button>
-      </div>
+    <><div className='container'>
+      <GameTest/>
     </div>
     </>
   )
 }
 
-export default App
+export default App;
 
-/* TODO
-
-- ha en bakgrunn med bildet (bevegelse?)
-- start-knapp for å komme til spillene
-- settings ikon for meny (foreldrekontroll)
-
-*/
