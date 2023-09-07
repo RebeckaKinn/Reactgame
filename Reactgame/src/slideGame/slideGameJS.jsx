@@ -6,7 +6,7 @@ const card = [
     bottom: ""},
 ];
 
-function slideGameHandling(){
+export function slideGameHandling(){
     const [card, setCards] = useState([])
 //shuffle images
     const shuffleImg = () => {
