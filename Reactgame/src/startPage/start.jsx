@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import settings_logo from './assets/settings.png'
 //import background from './assets/moving_cat.gif'
 import './index.css'
