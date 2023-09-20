@@ -1,8 +1,7 @@
 
-import settings_logo from './assets/settings.png'
-//import background from './assets/moving_cat.gif'
-import './index.css'
-import './App.css'
+import settings_logo from '../assets/settings.png'
+import '../index.css'
+import '../App.css'
 
 function Start(){
 

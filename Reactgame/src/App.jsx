@@ -1,7 +1,7 @@
 
 import './App.css'
 import './index.css'
-import GameTest from './slideGame/slideGame.jsx'
+import GameTest from './slideGame/slideGameJS.jsx'
 
 
 function App() {

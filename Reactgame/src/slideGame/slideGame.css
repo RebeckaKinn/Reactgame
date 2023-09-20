@@ -1,0 +1,34 @@
+.arrow{
+    height: 100px;
+    padding: 10px;
+}
+
+.slideGameBox{
+    grid-area: body;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.slideGameBox div{
+    display: flex;
+    align-items: center;
+}
+
+.gameImg{
+    width: 500px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.head{
+    object-position: 100% 20%;
+}
+
+.body{
+    object-position: 100% 50%;
+}
+
+.bottom{
+    object-position: 100% 80%;
+}

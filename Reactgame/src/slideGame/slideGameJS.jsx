@@ -1,55 +1,68 @@
-//import { useState } from "react";
-import BlueLeft from './src/assets/blue_left.png';
-import BlueRight from './src/assets/blue_right.png';
+//import React from "react"; 
+//arrows
+import blueLeft from '../assets/blue_left.png';
+import blueRight from '../assets/blue_right.png';
+import yellowLeft from '../assets/yellow_left.png';
+import yellowRight from '../assets/yellow_right.png';
+import whiteLeft from '../assets/white_left.png';
+import whiteRight from '../assets/white_right.png';
 
-import YellowLeft from './src/assets/yellow_left.png';
-import YellowRight from './src/assets/yellow_right.png';
+//image array
+import image1 from '../assets/tigern.jpg'
+import image2 from '../assets/soppen.jpg'
 
-import WhiteLeft from './src/assets/white_left .png';
-import WhiteRight from './src/assets/white_right.png';
+import './slideGame.css';
 
-const card = [{ head: "", body: "", bottom: "" }];
+const cards = [
+  { src: image1 },
 
-export function slideGameHandling() {
+  { src: image2},
 
-    const randomIndex = () => {
-        return Math.random() * card.length - 1;
-    }
+];
 
-    let app = /*HTML*/`
+function slideGameHandling() {
+  const randomIndex = () => {
+    return Math.floor(Math.random() * cards.length);
+  };
 
-    <div>
-        <div>
-        <button> <img src="${BlueLeft}"> </button>
-            <img src="${card[randomIndex()].head}">
-        <button> <img src="${BlueRight}"> </button>
-        </div>
+  const switchImage = () => {
 
-        <div>
-        <button> <img src="${YellowLeft}"> </button>
-            <img src="${card[randomIndex()].body}">
-        <button> <img src="${YellowRight}"> </button>
-        </div>
+  }
 
-        <div>
-        <button> <img src="${WhiteLeft}"> </button>
-            <img src="${card[randomIndex()].bottom}">
-        <button> <img src="${WhiteRight}"> </button>
-        </div>
+  return (
+    <>
+    <div className='slideGameBox'>
+      <div>
+
+          <img className="arrow" src={blueLeft} alt="blueLeft" />
+
+        <img className="gameImg head" src={cards[randomIndex()].src} alt="head" />
+
+          <img className="arrow" src={blueRight} alt="blueRight" />
+
+      </div>
+
+      <div>
+
+          <img className="arrow" src={yellowLeft} alt="yellowLeft" />
+
+        <img className="gameImg body" src={cards[randomIndex()].src} alt="body" />
+
+          <img className="arrow" src={yellowRight} alt="yellowRight" />
+
+      </div>
+
+      <div>
+       <img className="arrow" src={whiteLeft} alt="whiteLeft" />
+
+        <img  className="gameImg bottom"src={cards[randomIndex()].src} alt="bottom" />
+
+          <img className="arrow" src={whiteRight} alt="whiteRight" />
+
+      </div>
     </div>
-
-    `;
-    return app;
-//   const [card, setCards] = useState([]);
-//   //shuffle images
-//   const shuffleImg = () => {
-//     const shuffledCards = [...card]
-//       .sort(() => Math.random() - 0.5)
-//       .map((img) => ({ ...img, id: Math.random() }));
-
-//     setCards(shuffledCards);
-//   };
-  //test med for loop med dummy data
+    </>
+  );
 }
 
 export default slideGameHandling;
