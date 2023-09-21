@@ -6,15 +6,14 @@ import blueLeft from '../assets/blue_left.png';
 import blueRight from '../assets/blue_right.png';
 import yellowLeft from '../assets/yellow_left.png';
 import yellowRight from '../assets/yellow_right.png';
-import whiteLeft from '../assets/white_left.png';
-import whiteRight from '../assets/white_right.png';
+import greenLeft from '../assets/green_left.png';
+import greenRight from '../assets/green_right.png';
 
 //image array
 import image1 from '../assets/tigern.jpg'
 import image2 from '../assets/soppen.jpg'
 
 //TODO: put images in different folders in assets
-//TODO: bildene er ikke centrert
 
 import './slideGame.css';
 
@@ -24,9 +23,6 @@ const cards = [
   { src: image2 },
 
 ];
-
-
-//TODO: Skjekk chatGPT i forhold til useState og update site. Alt fungerer, men ikke oppdatere siden. 
 
 
 function SlideGameHandling() {
@@ -91,16 +87,16 @@ function SlideGameHandling() {
       <div>
        <img 
           onClick={() => switchImage('left', bottomIndex, 'bottom')} 
-          className="arrow" src={whiteLeft} 
-          alt="whiteLeft" />
+          className="arrow" src={greenLeft} 
+          alt="greenLeft" />
           <img 
               className="gameImg bottom"
               src={cards[bottomIndex].src} 
               alt="bottom" />
         <img 
             onClick={() => switchImage('right', bottomIndex, 'bottom')} 
-            className="arrow" src={whiteRight} 
-            alt="whiteRight" />
+            className="arrow" src={greenRight} 
+            alt="greenRight" />
       </div>
     </div>
     </>
