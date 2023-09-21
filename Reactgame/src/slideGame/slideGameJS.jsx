@@ -2,26 +2,26 @@ import "react";
 import { useState } from 'react';
 
 //arrows
-import blueLeft from '../assets/blue_left.png';
-import blueRight from '../assets/blue_right.png';
-import yellowLeft from '../assets/yellow_left.png';
-import yellowRight from '../assets/yellow_right.png';
-import greenLeft from '../assets/green_left.png';
-import greenRight from '../assets/green_right.png';
+import blueLeft from '../assets/arrows/blue_left.png';
+import blueRight from '../assets/arrows/blue_right.png';
+import yellowLeft from '../assets/arrows/yellow_left.png';
+import yellowRight from '../assets/arrows/yellow_right.png';
+import greenLeft from '../assets/arrows/green_left.png';
+import greenRight from '../assets/arrows/green_right.png';
 
 //image array
-import image1 from '../assets/tigern.jpg'
-import image2 from '../assets/soppen.jpg'
-
-//TODO: put images in different folders in assets
+import image1 from '../assets/slideGameImg/soppen.jpg'
+import image2 from '../assets/slideGameImg/tigern.jpg'
+import image3 from '../assets/slideGameImg/cat.jpg'
+import image4 from '../assets/slideGameImg/cat2.jpg'
 
 import './slideGame.css';
 
 const cards = [
   { src: image1 },
-
   { src: image2 },
-
+  { src: image3 },
+  { src: image4 },
 ];
 
 
