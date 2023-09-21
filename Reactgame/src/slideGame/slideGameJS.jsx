@@ -1,4 +1,5 @@
-//import React from "react"; 
+import "react"; 
+import { useState } from 'react';
 
 //arrows
 import blueLeft from '../assets/blue_left.png';
@@ -28,35 +29,26 @@ const cards = [
 //TODO: Skjekk chatGPT i forhold til useState og update site. Alt fungerer, men ikke oppdatere siden. 
 
 
-let headIndex;
-let bodyIndex;
-let bottomIndex;
-
-function slideGameHandling() {
-
+function SlideGameHandling() {
   const randomIndex = () => {
     return Math.floor(Math.random() * cards.length);
   };
 
-  const getIndex = () => {
-    headIndex = randomIndex()
-    bodyIndex = randomIndex()
-    bottomIndex = randomIndex()
-  }
-  getIndex();
+  const [headIndex, setHeadIndex] = useState(randomIndex());
+  const [bodyIndex, setBodyIndex] = useState(randomIndex());
+  const [bottomIndex, setBottomIndex] = useState(randomIndex());
   
 
-  const switchImage = (direction, index) => {
-    if(direction == 'left'){
-      if(index == 0) index = cards.length - 1;
-      else index--;
+  const switchImage = (direction, index, placement) => {
+    if (direction === 'left') {
+      index = (index - 1 + cards.length) % cards.length;
+    } else {
+      index = (index + 1) % cards.length;
     }
-    else{
-      if(index == cards.length - 1) index = 0;
-      else index++;
-    }
-    console.log(index)
-    return;
+  
+    if (placement === 'head') setHeadIndex(index);
+    else if (placement === 'body') setBodyIndex(index);
+    else setBottomIndex(index);
   };
 
 
@@ -66,7 +58,7 @@ function slideGameHandling() {
     <div className='slideGameBox'>
       <div>
         <img 
-            onClick={() => switchImage('left', headIndex)}
+            onClick={() => switchImage('left', headIndex, 'head')}
             className="arrow" 
             src={blueLeft} 
             alt="blueLeft" />
@@ -75,7 +67,7 @@ function slideGameHandling() {
               src={cards[headIndex].src} 
               alt="head" />
         <img 
-            onClick={() => switchImage('right', headIndex)}
+            onClick={() => switchImage('right', headIndex, 'head')}
             className="arrow" 
             src={blueRight} 
             alt="blueRight" />
@@ -83,7 +75,7 @@ function slideGameHandling() {
 
       <div>
         <img 
-            onClick={() => switchImage('left', bodyIndex)} 
+            onClick={() => switchImage('left', bodyIndex, 'body')} 
             className="arrow" src={yellowLeft} 
             alt="yellowLeft" />
           <img 
@@ -91,14 +83,14 @@ function slideGameHandling() {
               src={cards[bodyIndex].src} 
               alt="body" />
         <img 
-            onClick={() => switchImage('right', bodyIndex)} 
+            onClick={() => switchImage('right', bodyIndex, 'body')} 
             className="arrow" src={yellowRight} 
             alt="yellowRight" />
       </div>
 
       <div>
        <img 
-          onClick={() => switchImage('left', bottomIndex)} 
+          onClick={() => switchImage('left', bottomIndex, 'bottom')} 
           className="arrow" src={whiteLeft} 
           alt="whiteLeft" />
           <img 
@@ -106,7 +98,7 @@ function slideGameHandling() {
               src={cards[bottomIndex].src} 
               alt="bottom" />
         <img 
-            onClick={() => switchImage('right', bottomIndex)} 
+            onClick={() => switchImage('right', bottomIndex, 'bottom')} 
             className="arrow" src={whiteRight} 
             alt="whiteRight" />
       </div>
@@ -115,4 +107,4 @@ function slideGameHandling() {
   );
 }
 
-export default slideGameHandling;
+export default SlideGameHandling;
